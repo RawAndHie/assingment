@@ -30,7 +30,7 @@ class AccountController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function store(Request $request)
     {
@@ -50,12 +50,14 @@ class AccountController extends Controller
                 'phone.required' => 'Required'
             ]
         );
-        $accounts->identityNumber = $request->identityNumber;
-        $accounts->firstName = $request->firstName;
-        $accounts->lastName = $request->lastName;
+        $accounts->identity_number = $request->identityNumber;
+        $accounts->first_name = $request->firstName;
+        $accounts->last_name = $request->lastName;
         $accounts->phone = $request->phone;
         $accounts->gender = $request->gender;
         $accounts->save();
+
+        return view('account');
     }
 
     /**

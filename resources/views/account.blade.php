@@ -70,11 +70,11 @@
                                 <label class="col-sm-3 control-label">Gender</label>
                                 <div class="col-sm-9">
                                     <div class="radio-custom radio-primary col-sm-3">
-                                        <input type="radio" value="1" required="" checked>
+                                        <input name="gender" type="radio" value="0" checked>
                                         <label for="male">Male</label>
                                     </div>
                                     <div class="radio-custom radio-primary col-sm-3">
-                                        <input type="radio" value="2">
+                                        <input name="gender" type="radio" value="1">
                                         <label for="female">Female</label>
                                     </div>
                                 </div>
