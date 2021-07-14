@@ -20,7 +20,11 @@
                         <h2 class="panel-title">Register</h2>
                     </header>
                     <div class="panel-body">
-
+                        @if(Session::has('success'))
+                        <div class="alert alert-success text-center">
+                            {{Session::get('success')}}
+                        </div>
+                        @endif
                         <form class="form-horizontal form-bordered" method="post" action="/register">
                             @csrf
                             <div class="form-group">
@@ -66,11 +70,11 @@
                                 <label class="col-sm-3 control-label">Gender</label>
                                 <div class="col-sm-9">
                                     <div class="radio-custom radio-primary col-sm-3">
-                                        <input type="radio" value="male" required="" checked>
+                                        <input type="radio" value="1" required="" checked>
                                         <label for="male">Male</label>
                                     </div>
                                     <div class="radio-custom radio-primary col-sm-3">
-                                        <input type="radio" value="female">
+                                        <input type="radio" value="2">
                                         <label for="female">Female</label>
                                     </div>
                                 </div>

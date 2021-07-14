@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/register',[RegisterController::class,'index']);
-Route::post('/register',[RegisterController::class,'store']);
+Route::get('/register',[AccountController::class,'create']);
+Route::post('/register',[AccountController::class,'store']);

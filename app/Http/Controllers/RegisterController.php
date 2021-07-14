@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Account;
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
     public function index(){
-        return view('account');
+
     }
 
     public function store(Request $request)
@@ -27,7 +28,10 @@ class RegisterController extends Controller
                 'phone.required' => 'Required'
             ]
         );
-        return $validated;
+        Account::create($request->all());
+        return back()->with('success', 'Your form has been submitted.');
+    }
+    public function saveAccount(){
 
     }
 }
